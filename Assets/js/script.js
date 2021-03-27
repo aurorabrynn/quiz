@@ -82,7 +82,7 @@ function startTimer() {
             isGameRunning = false;
             clearInterval(timer);
             endGame();
-            //localStorage.setItem('losses', losses);
+            //localStorage.setItem('foo', foo);
         }
     }, 1000)
 }
@@ -92,6 +92,8 @@ function startTimer() {
 
 //presented score (timer = score)
 function endGame() {
+    isGameRunning = false;
+    clearInterval(timer);
     questionPlace.innerHTML = "Score: " + timeLeft;
     answerSection.innerHTML = "";
 }
