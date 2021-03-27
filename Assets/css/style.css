@@ -1,3 +1,24 @@
 body {
     background-color:rgb(30, 30, 30);
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid green; */
+}
+
+#timer {
+    display: flex;
+    margin-right: 20px;
+    /* border: 2px solid red; */
+}
+
+main {
+    text-align: center
+}
+
+ol {
+    display: inline-block;
+}
