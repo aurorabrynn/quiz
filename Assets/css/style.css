@@ -1,5 +1,6 @@
 body {
     background-color:rgb(30, 30, 30);
+    color: white;
 }
 
 header {
@@ -9,9 +10,13 @@ header {
     /* border: 2px solid green; */
 }
 
+#start {
+    margin-right: 28vh;
+}
+
 #timer {
     display: flex;
-    margin-right: 20px;
+    margin-right: 3vh;
     /* border: 2px solid red; */
 }
 
@@ -19,6 +24,11 @@ main {
     text-align: center
 }
 
-ol {
-    display: inline-block;
+button {
+    margin-bottom: 1vh;
+    background-color: #68BBE3;
+}
+
+li {
+    margin-left: 2vh;
 }
