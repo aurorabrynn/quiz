@@ -46,22 +46,20 @@ var questions = [
 ]
 
 //game starts when I click button
-function startGame() {
+function startGame(questions) {
     isGameRunning = true;
     startTimer();
     var output = [];
-    var question;
-    var answer1;
-    var answer2;
-    var answer3;
-    var answer4;
 
     //presented question
     for (var i = 0; i < questions.length; i++) {
         output.push(
-            questionPlace.textContent = questions[i].question
-
-        )
+            questionPlace.textContent = questions[i].question,
+            firstAnswer.textContent = questions[i].answer1,
+            secondAnswer.textContent = questions[i].answer2,
+            thirdAnswer.textContent = questions[i].answer3,
+            fourthAnswer.textContent = questions[i].answer4
+        );
     }
 }
 
@@ -97,4 +95,4 @@ function endGame() {
 //can save initals and score
 
 
-start.addEventListener("click", startGame)
+start.addEventListener("click", startGame(questions))
