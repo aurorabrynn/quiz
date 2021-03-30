@@ -14,6 +14,23 @@ header {
     margin-right: 28vh;
 }
 
+#game {
+    display: none;
+}
+
+#initials {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#save {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
 #timer {
     display: flex;
     margin-right: 3vh;

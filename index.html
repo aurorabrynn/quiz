@@ -18,22 +18,30 @@
         <h4 id="timer">Time:<span id="timeNum">0</span></h4>
     </header>
     <main id="main">
-        <h2 id="questionPlace">Question goes here</h2>
-        <section id="answerSection">
-            <ol>
-                <button>
-                    <li id="firstAnswer">Option 1</li>
-                </button><br>
-                <button>
-                    <li id="secondAnswer">Option 2</li>
-                </button><br>
-                <button>
-                    <li id="thirdAnswer">Option 3</li>
-                </button><br>
-                <button>
-                    <li id="fourthAnswer">Option 4</li>
-                </button><br>
-            </ol>
+        <section id="message">
+            <p>Think you know a lot about dogs and cats? Click the "Start Game" button to find out!</p>
+        </section>
+        <section id="game">
+            <h2 id="questionPlace">Question goes here</h2>
+            <section id="answerSection">
+                <ol>
+                    <button class="answer" id="answer1">
+                        <li>Option 1</li>
+                    </button><br>
+                    <button class="answer" id="answer2">
+                        <li>Option 2</li>
+                    </button><br>
+                    <button class="answer" id="answer3">
+                        <li>Option 3</li>
+                    </button><br>
+                    <button class="answer" id="answer4">
+                        <li>Option 4</li>
+                    </button><br>
+                </ol>
+            </section>
+            <textarea id="initials"></textarea>
+            <button id="save">Save</button>
+            <section id="rightOrWrong"></section>
         </section>
     </main>
 </body>
