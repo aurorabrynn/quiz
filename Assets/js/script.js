@@ -1,23 +1,24 @@
 var i = 0;
 var timeLeft = 0;
+var isGameRunning = false;
+var messageEl = document.querySelector("#message");
+var gameEl = document.querySelector("#game");
 var start = document.querySelector("#start");
 var timeNum = document.querySelector("#timeNum");
 var timer = document.querySelector("#timer");
-var main = document.querySelector("#main");
-var answerSection = document.querySelector("#answerSection");
 var questionPlace = document.querySelector("#questionPlace");
+var answerSection = document.querySelector("#answerSection");
 var firstAnswer = document.querySelector("#answer1");
 var secondAnswer = document.querySelector("#answer2");
 var thirdAnswer = document.querySelector("#answer3");
 var fourthAnswer = document.querySelector("#answer4");
 var answerBtns = document.querySelectorAll(".answer");
-var gameEl = document.querySelector("#game");
-var messageEl = document.querySelector("#message");
 var rightOrWrong = document.querySelector("#rightOrWrong");
 var initials = document.querySelector("#initials");
 var save = document.querySelector("#save");
-var isGameRunning = false;
-var score = "";
+var ranking = document.querySelector("#ranking");
+var refresh = document.querySelector("#refresh");
+
 var questions = [
     {
         question: "What does it mean when cats wag their tail?",
@@ -85,8 +86,11 @@ answerBtns.forEach(function (ansBtn) {
         if (userGuess === questions[i].correctAnswer) {
             rightOrWrong.innerHTML = "Right!"
             i++
+            if (i > 3) {
+                endGame();
+                return;
+            }
             present();
-            endGame();
             //if i answer wrong, time is subtracted from clock
         } else {
             rightOrWrong.innerHTML = "Wrong!"
@@ -109,7 +113,6 @@ function startTimer() {
             isGameRunning = false;
             clearInterval(timer);
             endGame();
-            //localStorage.setItem('foo', foo);
         }
     }, 1000)
 }
@@ -119,7 +122,8 @@ function endGame() {
     isGameRunning = false;
     clearInterval(timer);
     questionPlace.innerHTML = "Score: " + timeLeft;
-    answerSection.innerHTML = toggleElementDisplay(initials);
+    answerSection.innerHTML = "Good job! Enter your initials here: ";
+    toggleElementDisplay(initials);
     rightOrWrong.innerHTML = "";
     toggleElementDisplay(save);
 
@@ -127,7 +131,21 @@ function endGame() {
     save.addEventListener("click", function () {
         localStorage.setItem('score', timeLeft);
         localStorage.setItem('user', initials.value);
+        showRanking();
     })
+
+}
+
+function showRanking() {
+    var scoreObj = localStorage.getItem("score");
+    var userObj = localStorage.getItem("user");
+    questionPlace.innerHTML = "High Score:";
+    answerSection.innerHTML = "";
+    toggleElementDisplay(ranking);
+    toggleElementDisplay(initials);
+    toggleElementDisplay(save);
+    toggleElementDisplay(refresh);
+    ranking.innerHTML = userObj + " - " + scoreObj;
 }
 
 
@@ -136,4 +154,7 @@ start.addEventListener("click", function () {
     toggleElementDisplay(gameEl)
     startGame();
 })
-present();
+
+refresh.addEventListener("click", function () {
+    window.location.reload();
+})

@@ -15,7 +15,7 @@
         <section>
             <button id="start">Start Game!</button>
         </section>
-        <h4 id="timer">Time:<span id="timeNum">0</span></h4>
+        <h4 id="timer">Time: <span id="timeNum">0</span></h4>
     </header>
     <main id="main">
         <section id="message">
@@ -39,8 +39,11 @@
                     </button><br>
                 </ol>
             </section>
-            <textarea id="initials"></textarea>
-            <button id="save">Save</button>
+            <textarea id="initials" name="initials" rows="1" cols="5"></textarea>
+            <section id="ranking">
+                <ol id="rank-list"></ol>
+            </section>
+            <button id="save">Save</button><button id="refresh">Try again</button>
             <section id="rightOrWrong"></section>
         </section>
     </main>

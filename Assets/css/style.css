@@ -7,38 +7,23 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid green; */
 }
 
-#start {
-    margin-right: 28vh;
+main {
+    text-align: center
 }
 
 #game {
     display: none;
 }
 
-#initials {
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#save {
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+#start {
+    margin-right: 28vh;
 }
 
 #timer {
     display: flex;
     margin-right: 3vh;
-    /* border: 2px solid red; */
-}
-
-main {
-    text-align: center
 }
 
 button {
@@ -48,4 +33,22 @@ button {
 
 li {
     margin-left: 2vh;
+}
+
+#initials {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+#save, #refresh {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+#ranking {
+    display: none;
 }
