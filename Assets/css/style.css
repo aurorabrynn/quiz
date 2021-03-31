@@ -35,6 +35,13 @@ li {
     margin-left: 2vh;
 }
 
+#rightOrWrong {
+    display: none;
+    border-top: 2px solid white;
+    margin-left: 35vw;
+    margin-right: 40vw;
+}
+
 #initials {
     display: none;
     margin-left: auto;
@@ -42,7 +49,7 @@ li {
     margin-top: 10px;
 }
 
-#save, #refresh {
+#save, #again {
     display: none;
     margin-left: auto;
     margin-right: auto;

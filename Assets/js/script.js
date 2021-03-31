@@ -17,7 +17,7 @@ var rightOrWrong = document.querySelector("#rightOrWrong");
 var initials = document.querySelector("#initials");
 var save = document.querySelector("#save");
 var ranking = document.querySelector("#ranking");
-var refresh = document.querySelector("#refresh");
+var again = document.querySelector("#again");
 
 var questions = [
     {
@@ -84,8 +84,12 @@ answerBtns.forEach(function (ansBtn) {
         var userGuess = event.target.textContent
         //if i answer right, presented another question
         if (userGuess === questions[i].correctAnswer) {
+            if (window.getComputedStyle(rightOrWrong).display === "none") {
+                toggleElementDisplay(rightOrWrong);
+            }
             rightOrWrong.innerHTML = "Right!"
             i++
+            //when all questions answered, game is over
             if (i > 3) {
                 endGame();
                 return;
@@ -93,12 +97,14 @@ answerBtns.forEach(function (ansBtn) {
             present();
             //if i answer wrong, time is subtracted from clock
         } else {
+            if (window.getComputedStyle(rightOrWrong).display === "none") {
+                toggleElementDisplay(rightOrWrong);
+            }
             rightOrWrong.innerHTML = "Wrong!"
             timeLeft -= 15;
         }
     })
 })
-//when all questions answered, game is over
 
 //timer starts
 function startTimer() {
@@ -123,6 +129,7 @@ function endGame() {
     clearInterval(timer);
     questionPlace.innerHTML = "Score: " + timeLeft;
     answerSection.innerHTML = "Good job! Enter your initials here: ";
+    toggleElementDisplay(rightOrWrong);
     toggleElementDisplay(initials);
     rightOrWrong.innerHTML = "";
     toggleElementDisplay(save);
@@ -144,7 +151,7 @@ function showRanking() {
     toggleElementDisplay(ranking);
     toggleElementDisplay(initials);
     toggleElementDisplay(save);
-    toggleElementDisplay(refresh);
+    toggleElementDisplay(again);
     ranking.innerHTML = userObj + " - " + scoreObj;
 }
 
@@ -155,6 +162,6 @@ start.addEventListener("click", function () {
     startGame();
 })
 
-refresh.addEventListener("click", function () {
+again.addEventListener("click", function () {
     window.location.reload();
 })
